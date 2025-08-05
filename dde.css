@@ -1,6 +1,12 @@
-/* ---------------------- */
-/* الأساسيات وتنسيق الجسم */
-/* ---------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,9 +14,6 @@ body {
   color: #333;
 }
 
-/* ---------------------- */
-/* الهيدر الثابت */
-/* ---------------------- */
 header {
   position: relative;
   top: 0;
@@ -59,9 +62,7 @@ nav ul li a:hover {
   color: rgb(170, 240, 209);
 }
 
-/* ---------------------- */
-/* زر الاتصال */
-/* ---------------------- */
+
 .contact a {
   color: white;
   text-decoration: none;
@@ -137,9 +138,6 @@ nav ul li a:hover {
   border: 1px solid rgb(170, 240, 209);
 }
 
-/* ---------------------- */
-/* أزرار Back Home و View More */
-/* ---------------------- */
 .back-home-btn,
 .view-more-btn {
   background-color: rgb(170, 240, 209);
@@ -163,9 +161,6 @@ nav ul li a:hover {
   border: 1px solid rgb(170, 240, 209);
 }
 
-/* ---------------------- */
-/* الفوتر أو التذييل */
-/* ---------------------- */
 footer {
   background-color: rgb(54, 69, 79);
   color: white;
@@ -184,9 +179,6 @@ footer {
 }
 
 
-/* ---------------------- */
-/* ميديا كويري للموبايل */
-/* ---------------------- */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -222,7 +214,7 @@ footer {
     width: 90%;
   }
 }
-/* الصور داخل الأقسام */
+
 section img {
   max-width: 100%;
   height: auto;
@@ -231,18 +223,17 @@ section img {
   border-radius: 10px;
 }
 
-/* التحكم بالصور الكبيرة داخل الصفحة */
 .responsive-image {
   width: 100%;
   height: auto;
-  max-height: 400px; /* تمنع الصورة من تغطية الشاشة */
+  max-height: 400px; 
   object-fit: cover;
   border-radius: 10px;
   display: block;
   margin: 0 auto;
 }
 
-/* خريطة Google Maps */
+
 iframe {
   width: 100%;
   max-width: 100%;
@@ -261,7 +252,7 @@ iframe {
     align-items: center;
   }
 }
-/* تصميم موحد للأزرار */
+
 .cart-actions button,
 .cart-item .remove-btn {
   background-color: rgb(170, 240, 209);
@@ -289,5 +280,6 @@ iframe {
   justify-content: center;
   gap: 20px;
 }
+
 
 
