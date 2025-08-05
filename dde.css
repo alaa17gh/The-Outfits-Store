@@ -172,6 +172,17 @@ footer {
   text-align: center;
   padding: 20px;
 }
+.media a {
+  color: #ffffff;
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.media a:hover {
+  color: #e63946;
+  transform: scale(1.2);
+}
+
 
 /* ---------------------- */
 /* ميديا كويري للموبايل */
@@ -278,4 +289,5 @@ iframe {
   justify-content: center;
   gap: 20px;
 }
+
 
