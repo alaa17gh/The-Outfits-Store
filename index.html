@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Outfits Store</title>
+  <link rel="stylesheet" href="dde.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>The Outfits Store</h1>
+    <nav >
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="men-products.html">Man</a></li>
+        <li><a href="women-products.html">Women</a></li>
+        <li><a href="kids-products.html">Kids</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#media">Social Media</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+    <div class="contact">
+      <a href="tel:07777777777">Contact</a>
+    </div>
+    <a href="index.html">
+      <img src="logo.png" alt="logo" />
+    </a>
+  </header>
+
+  <section id="home" class="home" >
+    <div class="home-text">
+      <h2>Style that grows with you</h2>
+      <p>
+        Welcome to <strong>The Outfits</strong> — your go-to destination for stylish, comfortable, and eco-conscious clothing. 
+        Whether you're dressing up for an event or keeping it casual, our handpicked collections are designed to fit your lifestyle. 
+        Explore the latest trends, enjoy premium quality, and express your unique style with every piece. 
+        Fashion that feels good — and looks even better.
+      </p>
+    </div>
+    <div class="home-image">
+      <img src="store.png" alt="store image" />
+    </div>
+  </section>
+
+  <section id="man" class="man" >
+    <h2>The Man Section</h2>
+    <div class="clothing-section">
+      <div class="clothing-item" data-name="Men's black shirt" data-price="55000" data-image="a plain black men sh.png">
+        <img src="a plain black men sh.png" alt="Men's black shirt" />
+        <h3>Men's black shirt</h3>
+        <p class="price">55,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart🛒</button>
+      </div>
+      <div class="clothing-item" data-name="Men's Jeans" data-price="75000" data-image="jenz.png">
+        <img src="jenz.png" alt="Men's jeans" />
+        <h3>Men's Jeans</h3>
+        <p class="price">75,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart🛒</button>
+      </div>
+      <div class="clothing-item" data-name="Men's Jacket" data-price="120000" data-image="jacket.png">
+        <img src="jacket.png" alt="Men's jacket" />
+        <h3>Men's Jacket</h3>
+        <p class="price">120,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart🛒</button>
+      </div>
+      <div class="view-more">
+        <a href="men-products.html" class="view-more-btn">View More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="women" class="women" >
+    <h2>The Women Section</h2>
+    <div class="clothing-section">
+      <div class="clothing-item" data-name="Women Green dress" data-price="180000" data-image="dres.png">
+        <img src="dres.png" alt="Women Green dress" />
+        <h3>Women Green dress</h3>
+        <p class="price">180,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart🛒</button>
+      </div>
+      <div class="clothing-item" data-name="Women's white shirt" data-price="60000" data-image="Women's white shirt.png">
+        <img src="Women's white shirt.png" alt="Women's white shirt" />
+        <h3>Women's white shirt</h3>
+        <p class="price">60,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart🛒</button>
+      </div>
+      <div class="clothing-item" data-name="Women's skirt" data-price="40000" data-image="Women.png">
+        <img src="Women.png" alt="Women's skirt" />
+        <h3>Women's skirt</h3>
+        <p class="price">40,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart🛒</button>
+      </div>
+      <div class="view-more">
+        <a href="women-products.html" class="view-more-btn">View More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="kids" class="kids" >
+    <h2>The Kids Section</h2>
+    <div class="clothing-section">
+      <div class="clothing-item" data-name="Blue children's shirt" data-price="50000" data-image="kid1.png">
+        <img src="kid1.png" alt="Blue children's shirt" />
+        <h3>Blue children's shirt</h3>
+        <p class="price">50,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart🛒</button>
+      </div>
+      <div class="clothing-item" data-name="White children's pants" data-price="45000" data-image="white kids pants.png">
+        <img src="white kids pants.png" alt="White children's pants" />
+        <h3>White children's pants</h3>
+        <p class="price">45,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart🛒</button>
+      </div>
+      <div class="clothing-item" data-name="Yellow children's T-shirt" data-price="90000" data-image="yellow chil.png">
+        <img src="yellow chil.png" alt="Yellow children's T-shirt" />
+        <h3>Yellow children's T-shirt</h3>
+        <p class="price">90,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart🛒</button>
+      </div>
+      <div class="view-more">
+        <a href="kids-products.html" class="view-more-btn">View More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="offers" class="offers" >
+    <h2>Offers Of The Week</h2>
+    <ul>
+      <li>30% discount for the first purchase from the site</li>
+      <li>20% discount when you visit the store</li>
+      <li>Buy 2 and get the third one free</li>
+    </ul>
+  </section>
+
+  <section id="location" class="location">
+    <h2>Our Location</h2>
+    <p>Open daily from 10 AM to 2AM </p>
+    <p><i class="fa-solid fa-location-dot"></i> Baghdad, Yarmouk, Four Streets</p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.62551709571!2d44.33877442451685!3d33.30245877344845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15577f007441bda3%3A0x1ff687b574254e60!2z2KfZhNin2LHYqNi5INi02YjYp9ix2Lk!5e0!3m2!1sar!2siq!4v1754352430568!5m2!1sar!2siq"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <footer class="site-footer" data-aos="fade-up">
+    <section id="media" class="media">
+      <h2>Follow Us</h2>
+      <div class="media">
+        <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/yourwhatsappnumber"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>📞 07777777777</p>
+        <p>📧 TheOutfitsStore@example.com</p>
+        <p>📍 Baghdad, Iraq</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 The Outfits Store. All rights reserved.</p>
+        <p>Designed by Alaa Aljanaby</p>
+      </div>
+    </section>
+  </footer>
+
+  <script>
+    function addToCart(button) {
+      const itemDiv = button.closest('.clothing-item');
+      const name = itemDiv.getAttribute('data-name');
+      const price = parseInt(itemDiv.getAttribute('data-price'));
+      const image = itemDiv.getAttribute('data-image');
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      cart.push({ name, price, image });
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(name + " has been added to your cart!");
+    }
+  </script>
+</body>
+</html>

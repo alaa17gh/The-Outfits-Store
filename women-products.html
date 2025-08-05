@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Outfits Store - Women Section</title>
+  <link rel="stylesheet" href="dde.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>The Outfits Store</h1>
+    <nav data-aos="fade-up">
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="man-products.html">Man</a></li>
+        <li><a href="women-products.html">Women</a></li>
+        <li><a href="kids-products.html">Kids</a></li>
+        <li><a href="index.html#offers">Offers</a></li>
+        <li><a href="index.html#location">Location</a></li>
+        <li><a href="index.html#media">Social Media</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+    <div class="contact">
+      <a href="tel:07777777777">Contact</a>
+    </div>
+    <a href="index.html">
+      <img src="logo.png" alt="logo" />
+    </a>
+  </header>
+
+  <section id="women" class="women" data-aos="fade-up">
+    <h2>The Women Section</h2>
+    <div class="clothing-section">
+      <div class="clothing-item" data-name="Women Green dress" data-price="180000" data-image="dres.png">
+        <img src="dres.png" alt="Women Green dress" />
+        <h3>Women Green dress</h3>
+        <p class="price">180,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+
+      <div class="clothing-item" data-name="Women's white shirt" data-price="60000" data-image="Women's white shirt.png">
+        <img src="Women's white shirt.png" alt="Women's white shirt" />
+        <h3>Women's white shirt</h3>
+        <p class="price">60,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+
+      <div class="clothing-item" data-name="Women's skirt" data-price="90000" data-image="Women.png">
+        <img src="Women.png" alt="Women's skirt" />
+        <h3>Women's skirt</h3>
+        <p class="price">90,000 IQD</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="back-home">
+      <a href="index.html" class="back-home-btn">Back Home</a>
+    </div>
+  </section>
+
+  <script>
+    function addToCart(button) {
+      const itemDiv = button.closest('.clothing-item');
+      const name = itemDiv.getAttribute('data-name');
+      const price = parseInt(itemDiv.getAttribute('data-price'));
+      const image = itemDiv.getAttribute('data-image');
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      cart.push({ name, price, image });
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(name + " has been added to your cart!");
+    }
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

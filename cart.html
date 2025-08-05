@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - The Outfits Store</title>
+  <link rel="stylesheet" href="dde.css">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <h1>The Outfits Store</h1>
+  <nav data-aos="fade-up">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="men-products.html">Man</a></li>
+      <li><a href="women-products.html">Women</a></li>
+      <li><a href="kids-products.html">Kids</a></li>
+      <li><a href="index.html#offers">Offers</a></li>
+      <li><a href="index.html#location">Location</a></li>
+      <li><a href="index.html#media">Social Media</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+  <div class="contact">
+    <a href="tel:07777777777">Contact</a>
+  </div>
+  <a href="index.html">
+    <img src="logo.png" alt="logo">
+  </a>
+</header>
+
+<section id="cart" class="cart-section" data-aos="fade-up">
+  <h2>Your Shopping Cart</h2>
+
+  <div class="cart-items" id="cart-items">
+    <!-- Items will be loaded here -->
+  </div>
+
+  <div class="cart-summary">
+    <h3>Total: <span id="total">0</span> IQD</h3>
+  </div>
+
+  <div class="cart-actions">
+    <button class="confirm-btn" onclick="confirmOrder()">Confirm Order</button>
+    <a href="index.html" class="back-home-btn">Back to Home</a>
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+  function loadCart() {
+    const cartContainer = document.getElementById("cart-items");
+    const totalElement = document.getElementById("total");
+    cartContainer.innerHTML = "";
+    let total = 0;
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      cart.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = "cart-item";
+
+        itemDiv.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="item-details">
+            <h3>${item.name}</h3>
+            <p class="price">${item.price.toLocaleString()} IQD</p>
+          </div>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        `;
+
+        total += item.price;
+        cartContainer.appendChild(itemDiv);
+      });
+    }
+
+    totalElement.textContent = total.toLocaleString();
+  }
+
+  function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart();
+  }
+
+  function confirmOrder() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+      alert("Your cart is empty. Please add items before confirming.");
+    } else {
+      alert("Your order has been confirmed! Thank you for shopping at The Outfits Store.");
+      localStorage.removeItem('cart');
+      loadCart();
+    }
+  }
+
+  // Load cart on page load
+  window.onload = loadCart;
+</script>
+
+</body>
+</html>
